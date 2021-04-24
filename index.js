@@ -18,6 +18,7 @@ function installSFDX(){
     if(error) throw(stderr)
     core.debug(stdout)
     // if(core.getInput('sfdx-auth-url')) createAuthFile()
+    installGitDelta()
   })
 }
 
