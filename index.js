@@ -17,16 +17,6 @@ function installSFDX(){
   exec(download+' && '+createDir+' && '+unzip+' && '+install+' && '+clean, function(error, stdout, stderr){
     if(error) throw(stderr)
     core.debug(stdout)
-    installGitDelta()
-    // if(core.getInput('sfdx-auth-url')) createAuthFile()
-  })
-}
-
-function installGitDelta() {
-  var install = 'npm install sfdx-git-delta@latest -g'
-  exec(install, function(error, stdout, stderr){
-    if(error) throw(stderr)
-    core.debug(stdout)
     if(core.getInput('sfdx-auth-url')) createAuthFile()
   })
 }
