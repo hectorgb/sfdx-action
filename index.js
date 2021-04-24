@@ -23,9 +23,8 @@ function installSFDX(){
 }
 
 function installGitDelta() {
-  var install = 'echo y | sfdx plugins:install sfdx-git-delta'
-  var update = 'sfdx plugins'
-  exec(install+' && '+update, function(error, stdout, stderr){
+  var install = 'npm install sfdx-git-delta@latest -g'
+  exec(install, function(error, stdout, stderr){
     if(error) throw(stderr)
     core.debug(stdout)
     if(core.getInput('sfdx-auth-url')) createAuthFile()
